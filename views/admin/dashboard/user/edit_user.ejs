@@ -1,0 +1,15 @@
+<div class="card shadow mb-4 mt-1">
+  <div class="card-body">
+    <div class="table-responsive">
+      <form action="/admin/user/edit/<%= user.id %>" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= user.username %>" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary"><a href="/admin/user" class="text-decoration-none text-white">Back</a></button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../../../partials/js.ejs') %>

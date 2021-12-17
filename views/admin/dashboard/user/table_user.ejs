@@ -1,0 +1,32 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Add user</button>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% user.forEach((u,i) => { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= u.username %></td>
+            <td>
+              <form action="/admin/user/<%= u.id %>?_method=DELETE" method="post">
+                <a href="/admin/user/edit/<%= u.id %>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
